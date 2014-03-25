@@ -165,15 +165,15 @@ class Bep_site
 			if ( $i == count($this->breadcrumb_trail) )
 			{
 				// On last item, only show text
-				$output .= $name;
+				$output .= '<li class="active">'.$name;
 			}
 			else
 			{
-				$output .= anchor($link, $name);
-				$output .= " &#187; ";
+				$output .= '<li>'.anchor($link, $name);
 			}
 			$i++;
 		}
+		$output .= '</li>';
 		
 		return $output;
 	}

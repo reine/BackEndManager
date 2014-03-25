@@ -1,9 +1,10 @@
 $(document).ready(function(){
 	// Declare well used objects
 	var editBnt = $('#edit_dashboard');
-  	var saveBnt = $('#save_dashboard');
-  	var regions = $("#dashboard .sortable");
-  	var widgets = $('.widget',regions);
+	var saveBnt = $('#save_dashboard');
+  var cancelBnt = $('#cancel_dashboard');
+	var regions = $("#dashboard .sortable");
+	var widgets = $('.widget',regions);
   	
   	/* CREATE INITIAL DASHBOARD STATE */
   	// Hide Save button
@@ -58,8 +59,8 @@ $(document).ready(function(){
     
     // Assign a class to the actions so we can identify them in the future
     $('div.action',widgets).each(function(){
-    	var tick = $('img:eq(0)',this);
-    	var cross= $('img:eq(1)',this);
+    	var tick = $('i:eq(0)',this);
+    	var cross= $('i:eq(1)',this);
     	
     	// Setup onclick actions
     	tick.addClass('db-visible').hide().click(function(){
@@ -77,6 +78,7 @@ $(document).ready(function(){
     	// Hide the button and display the save button
     	editBnt.hide();
     	saveBnt.show();
+      cancelBnt.show();
     	
     	// Make regions sortable
     	regions.sortable("enable");
@@ -88,9 +90,9 @@ $(document).ready(function(){
     	widgets.each(function(){
     		// Decide whether to show a tick or a cross for this widget
     		if($(this).css('display') == 'none')
-    			$('.action img.db-hidden',this).show();
+    			$('.action i.db-hidden',this).show();
     		else
-    			$('.action img.db-visible',this).show();
+    			$('.action i.db-visible',this).show();
     		
     		// Show the widget
     		$(this).show();
@@ -117,7 +119,7 @@ $(document).ready(function(){
     	// If it isn't meant to be shown hide the widget
     	widgets.each(function(){
     		newID = $(this).attr('id').replace(/widget_/g, '');
-    		if($('div.action img:visible',this).hasClass('db-hidden')){
+    		if($('div.action i:visible',this).hasClass('db-hidden')){
     			// Cross is showing
     			cookie = cookie + "&" + newID + "[]=hidden";
     			$(this).hide();
@@ -133,6 +135,7 @@ $(document).ready(function(){
     	
     	// Hide the button and display the edit button
     	saveBnt.hide();
+      cancelBnt.hide();
     	editBnt.show();
     	
     	// Make regions sortable
@@ -142,6 +145,6 @@ $(document).ready(function(){
     	$('div.body',widgets).show();
     	
     	// Hide the actions
-    	$('.action img',widgets).hide();
+    	$('.action i',widgets).hide();
     });
   });

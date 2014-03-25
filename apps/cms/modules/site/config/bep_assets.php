@@ -50,29 +50,21 @@
 $config['asset'] = array();
 
 // BackendPro CSS
-$config['asset'][] = array('file'=>'reset.css');
-$config['asset'][] = array('file'=>'typography.css');
-$config['asset'][] = array('file'=>'bep_front_layout.css');
-$config['asset'][] = array('file'=>'buttons.css');
-$config['asset'][] = array('file'=>'forms.css');
+$config['asset'][] = array('file'=>'styles-front.css');
+$config['asset'][] = array('file'=>'styles-admin.css');
 $config['asset'][] = array('file'=>'recaptcha.css');
-$config['asset'][] = array('file'=>'bep_admin_layout.css');
-$config['asset'][] = array('file'=>'bep_admin_style.css');
 $config['asset'][] = array('file'=>'treeview.css');
 $config['asset'][] = array('file'=>'bep_generate_password.css', 'name'=>'bep_generate_password.css');
-$config['asset'][] = array('file'=>'FlashStatus.css');
-$config['asset'][] = array('file'=>'bep_icons.php','type'=>'css');
 
 // BackendPro JS
 $config['asset'][] = array('file'=>'jquery-1.6.2.min.js', 'name'=>'jquery');
-$config['asset'][] = array('file'=>'jquery-ui-1.8.16.custom.min.js', 'name' => 'jquery_ui', 'needs'=>'jquery');
-$config['asset'][] = array('file'=>'jquery.cookie.js', 'needs'=>'jquery');
-$config['asset'][] = array('file'=>'jquery.treeview.js', 'needs'=>'jquery.cookie');
+$config['asset'][] = array('file'=>'jquery-ui-1.8.16.custom.min.js', 'name'=>'jquery_ui', 'needs'=>'jquery_1.11');
+$config['asset'][] = array('file'=>'jquery.cookie.js', 'needs'=>'jquery_1.11');
+$config['asset'][] = array('file'=>'jquery.treeview.js', 'needs'=>'jquery.cookie', 'position'=>'header');
 $config['asset'][] = array('file'=>'bep_dashboard.js', 'needs'=>'jquery_ui|jquery.cookie');
-$config['asset'][] = array('file'=>'bep_navigation.js','needs'=>'jquery.cookie|jquery.treeview');
-$config['asset'][] = array('file'=>'bep_generate_password.js', 'needs'=>'jquery', 'name'=>'bep_generate_password.js');
+$config['asset'][] = array('file'=>'bep_generate_password.js', 'needs'=>'jquery_1.11', 'name'=>'bep_generate_password.js');
 $config['asset'][] = array('file'=>'bep_access_control.js', 'needs'=>'jquery.treeview');
-$config['asset'][] = array('file'=>'bep_select_all.js', 'needs'=>'jquery');
+$config['asset'][] = array('file'=>'bep_select_all.js', 'needs'=>'jquery_1.11');
 
 // Bootstrap CSS
 $config['asset'][] = array('file'=>'bootstrap_3.1.1/bootstrap.min.css', 'name'=>'bootstrap-css');
@@ -90,6 +82,10 @@ $config['asset'][] = array('file'=>'bootstrap_templates/modern-business/modern-b
 // Bootstrap Templates (JS)
 $config['asset'][] = array('file'=>'bootstrap_templates/modern-business/modern-business.js', 'name'=>'bootstrap-template-modern-business-js');
 
+// Admin
+$config['asset'][] = array('file'=>'AdminLTE.css', 'name'=>'adminlte-css');
+$config['asset'][] = array('file'=>'AdminLTE/app.js', 'name'=>'adminlte-js');
+
 // Fonts
 $config['asset'][] = array('file'=>'font-awesome.min.css', 'name'=>'fontawesome-css');
 
@@ -105,8 +101,8 @@ $config['asset'][] = array('file'=>'font-awesome.min.css', 'name'=>'fontawesome-
  * Where <asset_n> is the name of the asset file specified in the array above.
  */
 $config['asset_group']['SITE'] = 'bootstrap-css|bootstrap-js';
-$config['asset_group']['PUBLIC'] = 'bootstrap-template-modern-business-css|fontawesome-css|bootstrap-theme-flatly|bep_front_layout|bootstrap-template-modern-business-js';
-$config['asset_group']['ADMIN'] = 'bep_admin_layout|bep_admin_style|forms|buttons|bep_navigation|treeview|bep_icons|bep_select_all';
+$config['asset_group']['PUBLIC'] = 'bootstrap-template-modern-business-css|fontawesome-css|bootstrap-theme-flatly|styles-front|bootstrap-template-modern-business-js';
+$config['asset_group']['ADMIN'] = 'fontawesome-css|adminlte-css|styles-admin|treeview|bep_select_all|adminlte-js';
 
 $config['asset_group']['FORMS'] = '';
 $config['asset_group']['GENERATE_PASSWORD'] = "bep_generate_password.css|bep_generate_password.js";

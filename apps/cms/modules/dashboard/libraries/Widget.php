@@ -68,7 +68,7 @@ class Widget
 	function output()
 	{
 		$output = '<div class="widget" id="widget_' . md5($this->name) . '">';
-		$output.= '<div class="action">' . $this->CI->bep_assets->icon('tick') . $this->CI->bep_assets->icon('cross') .'</div>';
+		$output.= '<div class="action"><i class="fa fa-check-circle"></i> <i class="fa fa-times-circle"></i></div>';
 		$output.= '<div class="header">'.$this->name.'</div>';
 		$output.= '<div class="body">'.$this->body.'</div>';
 		$output.= '</div>';
