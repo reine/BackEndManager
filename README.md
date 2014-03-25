@@ -1,5 +1,7 @@
 # BackEndManager for CodeIgniter
 
+![screenshot - login](./docs/screens/screenshot-login.png =400x)
+
 ## Introduction
 
 In 2008, Adam Price developed [BackendPro](http://ellislab.com/forums/viewthread/76078/) (BEP) and the last updated version was 0.6.1. As per Price, he said:
@@ -34,3 +36,13 @@ Herewith listed are the features to be added in this release:
 ## Setup, Installation & Configuration
 
 Content to follow.
+
+## Support
+
+This is a work in progress - use at your own risk.
+
+If you found any bugs, please report them at the [Issues](https://github.com/reine/BackEndManager/issues) section of the project repository. Do note that I may not always reply to them as needed because I also work on my client projects.
+
+## Copyright & License
+
+BackEndManager is released under GPL v2. Wherever a third-party code is used, owner of the said code retains his/her own copyright & license. As much as possible, we will only use open source codes.
