@@ -1,7 +1,5 @@
 # BackEndManager for CodeIgniter
 
-![screenshot - login](./docs/screens/screenshot-login.png =400x)
-
 ## Introduction
 
 In 2008, Adam Price developed [BackendPro](http://ellislab.com/forums/viewthread/76078/) (BEP) and the last updated version was 0.6.1. As per Price, he said:
@@ -36,6 +34,10 @@ Herewith listed are the features to be added in this release:
 ## Setup, Installation & Configuration
 
 Content to follow.
+
+## Screenshots
+
+![screenshot - login](/docs/screens/screenshot-login.png?raw=true)
 
 ## Support
 
