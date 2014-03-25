@@ -40,6 +40,10 @@ Content to follow.
 
 ![screenshot - login](/docs/screens/screenshot-login.png?raw=true)
 
+![screenshot - dashboard](/docs/screens/screenshot-dashboard.png?raw=true)
+
+![screenshot - settings](/docs/screens/screenshot-settings.png?raw=true)
+
 ## Support
 
 This is a work in progress - use at your own risk.
