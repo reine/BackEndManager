@@ -81,8 +81,17 @@ $config['asset'][] = array('file'=>'bootstrap_3.1.1/bootstrap.min.css', 'name'=>
 $config['asset'][] = array('file'=>'jquery-1.11.0.min.js', 'name'=>'jquery_1.11', 'position'=>'header');
 $config['asset'][] = array('file'=>'bootstrap_3.1.1/bootstrap.min.js', 'name'=>'bootstrap-js', 'needs'=>'jquery_1.11');
 
-// Bootstrap Themes
+// Bootstrap Themes (CSS)
 $config['asset'][] = array('file'=>'bootstrap_themes/flatly/bootstrap.min.css', 'name'=>'bootstrap-theme-flatly');
+
+// Bootstrap Templates (CSS)
+$config['asset'][] = array('file'=>'bootstrap_templates/modern-business/modern-business.css', 'name'=>'bootstrap-template-modern-business-css');
+
+// Bootstrap Templates (JS)
+$config['asset'][] = array('file'=>'bootstrap_templates/modern-business/modern-business.js', 'name'=>'bootstrap-template-modern-business-js');
+
+// Fonts
+$config['asset'][] = array('file'=>'font-awesome.min.css', 'name'=>'fontawesome-css');
 
 /**
  * Asset Groups
@@ -96,10 +105,10 @@ $config['asset'][] = array('file'=>'bootstrap_themes/flatly/bootstrap.min.css', 
  * Where <asset_n> is the name of the asset file specified in the array above.
  */
 $config['asset_group']['SITE'] = 'bootstrap-css|bootstrap-js';
-$config['asset_group']['PUBLIC'] = 'bootstrap-theme-flatly|FlashStatus';
+$config['asset_group']['PUBLIC'] = 'bootstrap-template-modern-business-css|fontawesome-css|bootstrap-theme-flatly|bep_front_layout|bootstrap-template-modern-business-js';
 $config['asset_group']['ADMIN'] = 'bep_admin_layout|bep_admin_style|forms|buttons|bep_navigation|treeview|bep_icons|bep_select_all';
 
-$config['asset_group']['FORMS'] = "buttons|forms";
+$config['asset_group']['FORMS'] = '';
 $config['asset_group']['GENERATE_PASSWORD'] = "bep_generate_password.css|bep_generate_password.js";
 
 

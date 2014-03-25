@@ -1,47 +1,80 @@
-<h3><?php print $header?></h3>
-<?php print form_open('auth/login',array('class'=>'horizontal'))?>
-    <fieldset>
-        <ol>
-            <li>
-                <label for="login_field"><?php print $login_field?>:</label>
-                <input type="text" name="login_field" id="login_field" class="text" value="<?php print set_value("login_field")?>"/>
-            </li>
-            <li>
-                <label for="password"><?php print $this->lang->line('userlib_password')?>:</label>
-                <input type="password" name="password" id="password" class="text" />
-            </li>
-            <li>
-                <label for="remember"><?php print $this->lang->line('userlib_remember_me')?>?</label>
-                <?php print form_checkbox('remember','yes',$this->input->post('remember'))?>
-            </li>
-            <?php
-            // Only display captcha if needed
-            if($this->preference->item('use_login_captcha')):?>
-            <li class="captcha">
-                <label for="recaptcha_response_field"><?php print $this->lang->line('userlib_captcha')?>:</label>
-                <?php print $captcha?>
-            </li>
-            <?php endif;?>
+    <div class="container">
 
-            <li class="submit">
-            	<div class="buttons">
-            		<button type="submit" class="positive" name="submit" value="submit">
-            			<?php print $this->bep_assets->icon('key') ?>
-            			<?php print $this->lang->line('userlib_login')?>
-            		</button>
+        <div class="row">
 
-            		<a href="<?php print site_url('auth/forgotten_password') ?>">
-            			<?php print $this->bep_assets->icon('arrow_refresh') ?>
-            			<?php print $this->lang->line('userlib_forgotten_password')?>
-            		</a>
+            <div class="col-lg-12">
+                <h1 class="page-header"><?php print $header?>
+                    <small>For Account Access</small>
+                </h1>
+            </div>
 
-            		<?php if($this->preference->item('allow_user_registration')):?>
-            		<a href="<?php print site_url('auth/register') ?>">
-            			<?php print $this->bep_assets->icon('user') ?>
-            			<?php print $this->lang->line('userlib_register')?>
-            		</a>
-            		<?php endif;?>
-            </li>
-        </ol>
-    </fieldset>
-<?php print form_close()?>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <?php print form_open('auth/login',array('class'=>'form-horizontal'))?>
+                    <fieldset>
+
+                        <div class="form-group">
+                            <label for="login_field" class="col-lg-2 control-label"><?php print $login_field?></label>
+                            <div class="col-lg-10">
+                                <input type="text" name="login_field" id="login_field" class="form-control" value="<?php print set_value("login_field")?>" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="col-lg-2 control-label"><?php print $this->lang->line('userlib_password')?></label>
+                            <div class="col-lg-10">
+                                <input type="password" name="password" id="password" class="form-control" />
+                                <div class="checkbox">
+                                    <label for="remember">
+                                        <?php print form_checkbox('remember','yes',$this->input->post('remember'))?>
+                                        <?php print $this->lang->line('userlib_remember_me')?>?
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php
+                        // Only display captcha if needed
+                        if($this->preference->item('use_login_captcha')):?>
+                        <div class="form-group captcha">
+                            <label for="recaptcha_response_field" class="col-lg-2 control-label"><?php print $this->lang->line('userlib_captcha')?></label>
+                            <div class="col-lg-10">
+                                <?php print $captcha?>
+                            </div>
+                        </div>
+                        <?php endif;?>
+
+                        <div class="form-group submit">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <a href="<?php print site_url('/') ?>" class="btn btn-default">
+                                    <?php print $this->lang->line('general_cancel')?>
+                                </a>
+
+                                <button type="submit" class="btn btn-primary" name="submit" value="submit">
+                                    <?php print $this->lang->line('userlib_login')?>
+                                </button>
+
+                                <a href="<?php print site_url('auth/forgotten_password') ?>" class="btn btn-info">
+                                    <?php print $this->lang->line('userlib_forgotten_password')?>
+                                </a>
+
+                                <?php if($this->preference->item('allow_user_registration')):?>
+                                <a href="<?php print site_url('auth/register') ?>" class="btn btn-info">
+                                    <?php print $this->lang->line('userlib_register')?>
+                                </a>
+                                <?php endif;?>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                <?php print form_close()?>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+                

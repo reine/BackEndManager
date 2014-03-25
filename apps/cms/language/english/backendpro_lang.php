@@ -61,4 +61,4 @@ $lang['preference_page_email_configuration'] = "Email Configuration";
 $lang['preference_page_maintenance_debugging_settings'] = "Maintenance & Debugging Settings";
 
 /* End of file backendpro_lang.php */
-/* Location: ./system/application/language/english/backendpro_lang.php */
+/* Location: ./apps/cms/language/english/backendpro_lang.php */

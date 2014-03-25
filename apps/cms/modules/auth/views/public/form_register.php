@@ -1,45 +1,78 @@
-<h3><?php print $header?></h3>
-<?php print form_open('auth/register',array('class'=>'horizontal'))?>
-    <fieldset>
-        <ol>
-            <li>
-                <label for="username"><?php print $this->lang->line('userlib_username')?>:</label>
-                <input type="text" name="username" id="username" size="32" class="text" value="<?php print set_value('username')?>" />
-            </li>
-            <li>
-                <label for="email"><?php print $this->lang->line('userlib_email')?>:</label>
-                <input type="text" name="email" id="email" class="text"  value="<?php print set_value('email')?>" />
-            </li>
-            <li>
-                <label for="password"><?php print $this->lang->line('userlib_password')?>:</label>
-                <input type="password" name="password" id="password" size="32" class="text" />
-            </li>
-            <li>
-                <label for="confirm_password"><?php print $this->lang->line('userlib_confirm_password')?>:</label>
-                <input type="password" name="confirm_password" id="confirm_password" size="32" class="text" />
-            </li>
-            <?php
-            // Only display captcha if needed
-            if($this->preference->item('use_registration_captcha')){
-            ?>
-            <li class="captcha">
-                <label for="recaptcha_response_field"><?php print $this->lang->line('userlib_captcha')?>:</label>
-                <?php print $captcha?>
-            </li>
-            <?php } ?>
-            <li class="submit">
-            	<div class="buttons">
-            		<button type="submit" class="positive" name="submit" value="submit">
-            			<?php print $this->bep_assets->icon('user') ?>
-            			<?php print $this->lang->line('userlib_register')?>
-            		</button>
-            		
-            		<a href="<?php print site_url('auth/login') ?>" class="negative">
-            			<?php print $this->bep_assets->icon('cross') ?>
-            			<?php print $this->lang->line('general_cancel')?>
-            		</a>
-            	</div>
-            </li>
-        </ol>
-    </fieldset>
-<?php print form_close()?>
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header"><?php print $header?>
+                    <small>To Access Restricted Content</small>
+                </h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <?php print form_open('auth/register',array('class'=>'form-horizontal'))?>
+                    <fieldset>
+
+                        <div class="form-group">
+                            <label for="username" class="col-lg-2 control-label"><?php print $this->lang->line('userlib_username')?></label>
+                            <div class="col-lg-10">
+                                <input type="text" name="username" id="username" size="32" class="form-control" value="<?php print set_value('username')?>" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="col-lg-2 control-label"><?php print $this->lang->line('userlib_email')?></label>
+                            <div class="col-lg-10">
+                                <input type="text" name="email" id="email" class="form-control"  value="<?php print set_value('email')?>" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" class="col-lg-2 control-label"><?php print $this->lang->line('userlib_password')?></label>
+                            <div class="col-lg-10">
+                                <input type="password" name="password" id="password" size="32" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm_password" class="col-lg-2 control-label"><?php print $this->lang->line('userlib_confirm_password')?></label>
+                            <div class="col-lg-10">
+                                <input type="password" name="confirm_password" id="confirm_password" size="32" class="form-control" />
+                            </div>
+                        </div>
+
+                        <?php
+                        // Only display captcha if needed
+                        if($this->preference->item('use_registration_captcha')):?>
+                        <div class="form-group captcha">
+                            <label for="recaptcha_response_field" class="col-lg-2 control-label"><?php print $this->lang->line('userlib_captcha')?></label>
+                            <div class="col-lg-10">
+                                <?php print $captcha?>
+                            </div>
+                        </div>
+                        <?php endif;?>
+
+                        <div class="form-group submit">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <a href="<?php print site_url('auth/login') ?>" class="btn btn-default">
+                                    <?php print $this->lang->line('general_cancel')?>
+                                </a>
+
+                                <button type="submit" class="btn btn-primary" name="submit" value="submit">
+                                    <?php print $this->lang->line('userlib_register')?>
+                                </button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                <?php print form_close()?>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+                

@@ -26,7 +26,9 @@ Herewith is a list of features from the original release:
 Herewith listed are the features to be added in this release:
 
 * Touted as a **"multiple application - one core"** so that it will be easy to upgrade the system files without affecting the application files. Likewise, each app can stand alone with its own set of modules.
-* Use of Bootstrap as its front-end framework for responsive and mobile web.
+* Bootstrap 3 Framework
+* Option to use Bootstrap Themes - e.g., Flatly from [Bootswatch](http://bootswatch.com/)
+* Option to use Bootstrap Templates - e.g., Modern Business from [Start Bootstrap](http://startbootstrap.com/)
 * Other features to be added as needed
 
 ## Setup, Installation & Configuration

@@ -1,4 +1,3 @@
-<div id="content">
     <a name="top"></a>
     <?php print displayStatus();?>
     <?php print (isset($content)) ? $content : NULL; ?>
@@ -10,4 +9,3 @@
             $this->load->view($page);
         }}
     ?>
-</div>
