@@ -11,7 +11,8 @@
 |	http://example.com/
 |
 */
-$config['base_url']	= "http://bem.dev/";
+if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on"){$ssl_set = "s";}else{$ssl_set = "";}
+$config['base_url'] = 'http'.$ssl_set.'://'.$_SERVER['HTTP_HOST'];
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ $config['base_url']	= "http://bem.dev/";
 | variable so that it is blank.
 |
 */
-$config['index_page'] = "index.php";
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -238,7 +239,7 @@ $config['sess_use_database']	= TRUE;
 $config['sess_table_name']		= 'ci_sessions';
 $config['sess_match_ip']		= FALSE;
 $config['sess_match_useragent']	= TRUE;
-$config['sess_time_to_update'] 	= 300;
+$config['sess_time_to_update'] 	= 2400;
 
 /*
 |--------------------------------------------------------------------------
@@ -250,8 +251,12 @@ $config['sess_time_to_update'] 	= 300;
 | 'cookie_path'   =  Typically will be a forward slash
 |
 */
+$host = $_SERVER['HTTP_HOST'];
+$host = str_replace('www.', '', $host);
+$main_domain = preg_replace('%(?:http[s]*://)*(.*?)\.(?=[^/]*\..{2,5})%i', '', $host);
+
 $config['cookie_prefix']	= "";
-$config['cookie_domain']	= "";
+$config['cookie_domain']	= ".".$main_domain;
 $config['cookie_path']		= "/";
 
 /*
@@ -295,7 +300,7 @@ $config['compress_output'] = FALSE;
 | regarding date handling.
 |
 */
-$config['time_reference'] = 'local';
+$config['time_reference'] = 'gmt';
 
 
 /*
@@ -313,4 +318,4 @@ $config['rewrite_short_tags'] = FALSE;
 
 
 /* End of file config.php */
-/* Location: ./system/application/config/config.php */
+/* Location: ./apps/cms/config/config.php */

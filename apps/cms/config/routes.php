@@ -39,8 +39,9 @@
 */
 
 $route['default_controller'] = "welcome";
+$route['scaffolding_trigger'] = '';
 $route['404_override'] = '';
 $route['admin'] = 'admin/home';
 
 /* End of file routes.php */
-/* Location: ./application/config/routes.php */
+/* Location: ./apps/cms/config/routes.php */

@@ -38,9 +38,21 @@ $active_group = "default";
 $active_record = TRUE;
 
 $db['default']['hostname'] = "localhost";
-$db['default']['username'] = "root";
-$db['default']['password'] = "mysql";
-$db['default']['database'] = "bem_cms";
+
+if (ENVIRONMENT == 'development')
+{
+    $db['default']['username'] = 'root';
+    $db['default']['password'] = 'mysql';
+    $db['default']['database'] = 'bem_cms';
+}
+
+if (ENVIRONMENT == 'production')
+{
+    $db['default']['username'] = '';
+    $db['default']['password'] = '';
+    $db['default']['database'] = '';
+}
+
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
@@ -51,4 +63,4 @@ $db['default']['char_set'] = "utf8";
 $db['default']['dbcollat'] = "utf8_general_ci";
 
 /* End of file database.php */
-/* Location: ./system/application/config/database.php */
+/* Location: ./apps/cms/config/database.php */
