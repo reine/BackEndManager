@@ -74,6 +74,15 @@ $config['asset'][] = array('file'=>'bep_generate_password.js', 'needs'=>'jquery'
 $config['asset'][] = array('file'=>'bep_access_control.js', 'needs'=>'jquery.treeview');
 $config['asset'][] = array('file'=>'bep_select_all.js', 'needs'=>'jquery');
 
+// Bootstrap CSS
+$config['asset'][] = array('file'=>'bootstrap_3.1.1/bootstrap.min.css', 'name'=>'bootstrap-css');
+
+// Bootstrap JS
+$config['asset'][] = array('file'=>'jquery-1.11.0.min.js', 'name'=>'jquery_1.11', 'position'=>'header');
+$config['asset'][] = array('file'=>'bootstrap_3.1.1/bootstrap.min.js', 'name'=>'bootstrap-js', 'needs'=>'jquery_1.11');
+
+// Bootstrap Themes
+$config['asset'][] = array('file'=>'bootstrap_themes/flatly/bootstrap.min.css', 'name'=>'bootstrap-theme-flatly');
 
 /**
  * Asset Groups
@@ -86,9 +95,9 @@ $config['asset'][] = array('file'=>'bep_select_all.js', 'needs'=>'jquery');
  * 
  * Where <asset_n> is the name of the asset file specified in the array above.
  */
-$config['asset_group']['SITE'] = 'reset|typography';
-$config['asset_group']['PUBLIC'] = 'bep_front_layout|FlashStatus';
-$config['asset_group']['ADMIN'] = 'bep_admin_layout|bep_admin_style|FlashStatus|forms|buttons|bep_navigation|treeview|bep_icons|bep_select_all';
+$config['asset_group']['SITE'] = 'bootstrap-css|bootstrap-js';
+$config['asset_group']['PUBLIC'] = 'bootstrap-theme-flatly|FlashStatus';
+$config['asset_group']['ADMIN'] = 'bep_admin_layout|bep_admin_style|forms|buttons|bep_navigation|treeview|bep_icons|bep_select_all';
 
 $config['asset_group']['FORMS'] = "buttons|forms";
 $config['asset_group']['GENERATE_PASSWORD'] = "bep_generate_password.css|bep_generate_password.js";
@@ -219,7 +228,7 @@ $config['asset_caching']['expire_time'] = 48;
  * 
  * @var string
  */
-$config['asset_caching']['path'] = "assets/cache/";
+$config['asset_caching']['path'] = "assets/cms/cache/";
 
 /* End of file bep_assets.php */
 /* Location: ./modules/site/config/bep_assets.php */
