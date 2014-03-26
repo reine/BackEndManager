@@ -1,6 +1,6 @@
 <h2><?php print $header;?></h2>
 
-<?php print form_open($form_link);?>
+<?php print form_open($form_link,array('class'=>'form-horizontal'));?>
 <table id="preference_form">
 	<?php foreach($field as $name => $data): ?>
 	<tr>
@@ -20,14 +20,14 @@
 </table>
 
 <div class="buttons">
-	<button type="submit" class="positive" name="submit" value="submit">
-    <?php print $this->bep_assets->icon('disk');?>
-    <?php print $this->lang->line('general_save');?>
+	<button type="submit" class="btn btn-default" name="submit" value="submit">
+		<i class="fa fa-floppy-o"></i>
+    	<?php print $this->lang->line('general_save');?>
     </button>
 
-    <a href="<?php print site_url($cancel_link);?>" class="negative">
-    <?php print $this->bep_assets->icon('cross');?>
-    <?php print $this->lang->line('general_cancel');?>
+    <a href="<?php print site_url($cancel_link);?>" class="btn btn-default">
+    	<i class="fa fa-times"></i>
+    	<?php print $this->lang->line('general_cancel');?>
     </a>
 </div>
 <?php print form_close();?>

@@ -36,6 +36,7 @@ class Settings extends Admin_Controller
 	function index()
 	{
 		$this->load->model('auth/access_control_model');
+
 		// Setup the preference form
 		$config['form_name'] = $this->lang->line('backendpro_settings');
 		$config['form_link'] = 'admin/settings/index';
@@ -84,6 +85,22 @@ class Settings extends Admin_Controller
 		$data['content'] = $this->preference_form->display();
 		$this->load->view($this->_container,$data);
 	}
+
+	/*
+	 * Display page with PHP information
+	 */
+	function php_info()
+	{
+		// Breadcrumbs
+		$this->bep_site->set_crumb($this->lang->line('backendpro_control_panel'),'admin');
+		$this->bep_site->set_crumb($this->lang->line('backendpro_settings'),'admin/settings');
+		$this->bep_site->set_crumb($this->lang->line('misc_phpinfo'),'admin/settings/php_info');
+
+		// Display Page
+		$data['header'] = $this->lang->line('misc_phpinfo');
+		$data['page'] = $this->config->item('backendpro_template_admin') . "info";
+		$this->load->view($this->_container,$data);
+	}
 }
 /* End of file settings.php */
-/* Location: ./system/application/controllers/admin/settings.php */
+/* Location: ./apps/default/controllers/admin/settings.php */

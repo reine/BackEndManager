@@ -65,6 +65,9 @@ $lang['apps_messages'] = "Messages";
 $lang['apps_tasks'] = "Tasks";
 $lang['apps_calendar'] = "Calendar";
 
+/* Miscellaneous */
+$lang['misc_phpinfo'] = "PHP Information";
+
 
 /* End of file backendpro_lang.php */
-/* Location: ./apps/cms/language/english/backendpro_lang.php */
+/* Location: ./apps/default/language/english/backendpro_lang.php */
