@@ -125,7 +125,7 @@ class Bep_assets
 
 		// TODO: This asset path should be set in config
 		// TODO: Should be able to load icons of type gif
-		$icon['src'] = 'icons/' . $name . '.png';
+		$icon['src'] = 'images/icons/' . $name . '.png';
 		$icon['alt'] = $name;
 		
 		if($title)

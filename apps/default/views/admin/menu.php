@@ -21,6 +21,10 @@ When creating a new menu item on the top-most level, please ensure that you assi
                             if  (
                                     (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'members')) ||
                                     (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'access_control')) ||
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'acl_permissions')) ||
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'acl_groups')) ||
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'acl_resources')) ||
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'acl_actions')) ||
                                     (($this->uri->segment(1) == 'admin') && ($this->uri->segment(2) == 'settings'))
                                 ) {
                                 $systemActiveLink = 'active';

@@ -2777,7 +2777,7 @@ body.skin-flat {
   color: #f9f9f9;
 }
 .skin-flat .logo:hover {
-  background: #2C3E50;
+  background: #18191E; /*#2C3E50*/
 }
 /* skin-flat content header */
 .skin-flat .content {
@@ -2817,7 +2817,7 @@ body.skin-flat {
   border-bottom: 0px solid #444;
 }
 .skin-flat .sidebar > .sidebar-menu > li:first-of-type {
-  border-top: 1px solid #444;
+  border-top: 0px solid #444;
 }
 .skin-flat .sidebar > .sidebar-menu > li:first-of-type > a {
   border-top: 0px solid #333;
@@ -2831,12 +2831,12 @@ body.skin-flat {
 }
 .skin-flat .sidebar > .sidebar-menu > li.active > a {
   color: #fff;
-  background: #E74C3C;
+  background: #18191E;
 }
 
 .skin-flat .sidebar > .sidebar-menu > li > .treeview-menu {
   margin: 0 1px;
-  background: #444;
+  background: #272934;
 }
 .skin-flat .left-side {
   background: #2c3e50;

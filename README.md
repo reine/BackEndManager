@@ -27,20 +27,32 @@ Herewith listed are the features added in this release:
 
 * Touted as a **"multiple application - one core"** so that it will be easy to upgrade the system files without affecting the application files. Likewise, each app can stand alone with its own set of modules.
 * Bootstrap 3 Framework
-* Option to use Bootstrap Themes - e.g., Flatly from [Bootswatch](http://bootswatch.com/)
-* Option to use Bootstrap Templates - e.g., Modern Business from [Start Bootstrap](http://startbootstrap.com/)
-* [AdminLTE](http://almsaeedstudio.com) as the new admin panel's design & layout
+* Option to use Bootstrap Themes in the frontend - e.g., Flatly from [Bootswatch](http://bootswatch.com/)
+* Option to use Bootstrap Templates in the frontend - e.g., Modern Business from [Start Bootstrap](http://startbootstrap.com/)
+* [AdminLTE](http://almsaeedstudio.com) as the new admin panel's design & layout; includes two skins - i.e., Black, Blue. A new skin (entitled "Flat") have been added specifically for use in BackEndManager.
+* [Beautiful Flat Icons by ElegantThemes](http://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free) are used in the dashboard apps of the admin panel.
 * *Other features to be added as needed*
 
 ## Setup, Installation & Configuration
 
-Content to follow.
+### System Requirements
+
+* Apache 2.x with mod_rewrite enabled
+* PHP 5.x (current release tested on 5.4.19)
+* CodeIgniter 2.x (current release tested on 2.1.4)
+
+More content to follow.
 
 ## Screenshots
 
+*Login screen using Flatly as theme with Modern Business as template.*
 ![screenshot - login](/docs/screens/screenshot-login.png?raw=true)
 
+*Dashboard screen using the Black skin in the admin panel.*
 ![screenshot - dashboard](/docs/screens/screenshot-dashboard.png?raw=true)
+
+*Dashboard screen with the default Flat skin in the admin panel.*
+![screenshot - dashboard - flat](/docs/screens/screenshot-dashboard-flat.png?raw=true)
 
 ![screenshot - settings](/docs/screens/screenshot-settings.png?raw=true)
 

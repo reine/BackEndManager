@@ -63,8 +63,8 @@
                             <li class="user-header bg-light-blue">
                                 <img src="<?php print base_url(); ?>images/avatar3.png" class="img-circle" alt="User Image" />
                                 <p>
-                                    Jane Doe - Web Developer
-                                    <small>Member since Nov. 2012</small>
+                                    Jane Doe - Administrator
+                                    <small>Member since March 2014</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
@@ -95,8 +95,8 @@
                     </div>
                     <div class="pull-left info">
                         <p>Jane Doe</p>
-
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        <a name="user-group">Administrator</a>
+                        <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
                     </div>
                 </div>
 

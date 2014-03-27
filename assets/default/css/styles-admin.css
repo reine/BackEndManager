@@ -149,10 +149,23 @@ body > .header .logo {
 	line-height: 20px;
 }
 
+/* apps */
+#dashboard .btn.btn-app {
+	padding: 5px;
+	margin: 0 0 5px 10px;
+	height: 90px;
+	border: none;
+	background-color: transparent;
+}
+
 /* MENU NAVIGATION */
 #navigation #menu { padding: 2em 0 2em 2em; }
 #navigation #menu a { color: #000; text-decoration: none; }
 #navigation #menu a:hover { text-decoration: underline; }
+
+.user-panel > .info {
+	padding: 5px 5px 5px 10px;
+}
 
 /* STANDARD STYLES */
 h2 { margin-top: 0.5em; border-bottom: 1px solid #777; }
@@ -174,6 +187,8 @@ h2 { margin-top: 0.5em; border-bottom: 1px solid #777; }
 
 /* ACCESS CONTROL SPLASH PAGE */
 #access_control_menu td { padding: 0.5em; vertical-align: top; }
+#access_control_menu td.icons { text-align: center; }
+#access_control_menu td.icons > i { padding-top: 20px; font-size: 4em; }
 
 /* MANAGE PERMISSION SCROLLABLE TREES */
 div.scrollable_tree {

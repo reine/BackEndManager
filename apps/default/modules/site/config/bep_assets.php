@@ -234,7 +234,7 @@ $config['asset_caching']['expire_time'] = 48;
  * 
  * @var string
  */
-$config['asset_caching']['path'] = "assets/cms/cache/";
+$config['asset_caching']['path'] = "assets/default/cache/";
 
 /* End of file bep_assets.php */
 /* Location: ./modules/site/config/bep_assets.php */
