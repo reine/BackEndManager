@@ -1,4 +1,4 @@
-<div class="small-box bg-purple">
+<div class="small-box bg-wisteria">
     <div class="inner">
         <h3><?php print $total_members ?></h3>
         <p><?php print $this->lang->line('dashboard_statistics_total_members') ?></p>
@@ -15,7 +15,7 @@
 </div>
 
 
-<div class="small-box bg-green">
+<div class="small-box bg-nephritis">
     <div class="inner">
         <h3><?php print phpversion();?></h3>
         <p><?php print $this->lang->line('dashboard_statistics_php_version') ?></p>

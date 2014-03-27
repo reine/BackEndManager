@@ -41,7 +41,7 @@ class Members extends Admin_Controller
 
 		// Load the validation library
 		$this->load->library('form_validation');
-                $this->load->model('user_model');
+        $this->load->model('user_model');
 
 		log_message('debug','BackendPro : Members class loaded');
 	}

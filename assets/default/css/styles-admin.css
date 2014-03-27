@@ -2,12 +2,88 @@ body > .header .logo {
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
-.right-side > .content-header > .breadcrumb > li > a > .fa {
-	margin-right: 0px;
+/* FLAT Colors */
+.bg-turquoise {
+	background-color: #1ABC9C;
 }
-
-.alert>ul {
-	list-style: none !important;
+.bg-green-sea {
+	background-color: #16A085;
+}
+.bg-emerald {
+	background-color: #2ECC71;
+}
+.bg-nephritis {
+	background-color: #27AE60;
+}
+.bg-peter-river {
+	background-color: #3498DB;
+}
+.bg-belize-hole {
+	background-color: #2980B9;
+}
+.bg-amethyst {
+	background-color: #9B59B6;
+}
+.bg-wisteria {
+	background-color: #8E44AD;
+}
+.bg-wet-asphalt {
+	background-color: #34495E;
+}
+.bg-midnight-blue {
+	background-color: #2C3E50;
+}
+.bg-sun-flower {
+	background-color: #F1C40F;
+}
+.bg-orange {
+	background-color: #F39C12;
+}
+.bg-carrot {
+	background-color: #E67E22;
+}
+.bg-pumpkin {
+	background-color: #D35400;
+}
+.bg-alizarin {
+	background-color: #E74C3C;
+}
+.bg-pomegranate {
+	background-color: #C0392B;
+}
+.bg-clouds {
+	background-color: #ECF0F1;
+}
+.bg-silver {
+	background-color: #BDC3C7
+}
+.bg-concrete {
+	background-color: #95A5A6;
+}
+.bg-asbestos {
+	background-color: #7F8C8D;
+}
+.bg-turquoise,
+.bg-green-sea,
+.bg-emerald,
+.bg-nephritis,
+.bg-peter-river,
+.bg-belize-hole,
+.bg-amethyst,
+.bg-wisteria,
+.bg-wet-asphalt,
+.bg-midnight-blue,
+.bg-sun-flower,
+.bg-orange,
+.bg-carrot,
+.bg-pumpkin,
+.bg-alizarin,
+.bg-pomegranate,
+.bg-clouds,
+.bg-silver,
+.bg-concrete,
+.bg-asbestos {
+	color: #f9f9f9 !important;
 }
 
 /* DASHBOARD DIVS */
@@ -42,6 +118,7 @@ body > .header .logo {
 #dashboard .ui-sortable-helper {
 	width: 300px;
 }
+
 /* widgets */
 #dashboard div.widget {
 	position: relative;
@@ -79,6 +156,12 @@ body > .header .logo {
 
 /* STANDARD STYLES */
 h2 { margin-top: 0.5em; border-bottom: 1px solid #777; }
+
+/* Breadcrumbs */
+.right-side > .content-header > .breadcrumb > li > a > .fa { margin-right: 0px; }
+
+/* Status / Alerts */
+.alert>ul { list-style: none !important; }
 
 /* PREFERENCE LIST */
 #preference_list { font-size: 1.1em; list-style-type: none; }

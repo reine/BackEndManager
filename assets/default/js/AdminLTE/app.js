@@ -164,7 +164,7 @@ $(function() {
             + "<div class='form-group no-margin'>"
             + "<div class='.radio'>"
             + "<label>"
-            + "<input name='skins' type='radio' onchange='change_skin(\"skin-black\");' checked='checked'/> "
+            + "<input name='skins' type='radio' onchange='change_skin(\"skin-black\");'/> "
             + "Black"
             + "</label>"
             + "</div>"
@@ -175,6 +175,15 @@ $(function() {
             + "<label>"
             + "<input name='skins' type='radio' onchange='change_skin(\"skin-blue\");'/> "
             + "Blue"
+            + "</label>"
+            + "</div>"
+            + "</div>"
+
+            + "<div class='form-group no-margin'>"
+            + "<div class='.radio'>"
+            + "<label>"
+            + "<input name='skins' type='radio' onchange='change_skin(\"skin-flat\");' checked='checked'/> "
+            + "Flat"
             + "</label>"
             + "</div>"
             + "</div>"
@@ -199,7 +208,7 @@ function change_layout() {
     $("body").toggleClass("fixed");
 }
 function change_skin(cls) {
-    $("body").removeClass("skin-blue skin-black");
+    $("body").removeClass("skin-blue skin-black skin-flat");
     $("body").addClass(cls);
 }
 /*END DEMO*/

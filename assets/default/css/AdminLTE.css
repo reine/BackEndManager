@@ -1,6 +1,19 @@
+/* For fast loading purposes, fonts are locally served unless otherwise noted.
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic);
+*/
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../fonts/source-sans-pro/sourcesanspro-regular-webfont.eot');
+    src: url('../fonts/source-sans-pro/sourcesanspro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/source-sans-pro/sourcesanspro-regular-webfont.woff') format('woff'),
+         url('../fonts/source-sans-pro/sourcesanspro-regular-webfont.ttf') format('truetype'),
+         url('../fonts/source-sans-pro/sourcesanspro-regular-webfont.svg#source_sans_proregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @import url(http://fonts.googleapis.com/css?family=Kaushan+Script);
+
 /*! 
  *   AdminLTE v1.0
  *   Author: AlmsaeedStudio.com
@@ -2708,6 +2721,178 @@ Component: timeline
   border-left: 0;
 }
 .skin-black .sidebar-form .btn {
+  color: #999;
+  -webkit-border-top-left-radius: 0 !important;
+  -webkit-border-top-right-radius: 2px !important;
+  -webkit-border-bottom-right-radius: 2px !important;
+  -webkit-border-bottom-left-radius: 0 !important;
+  -moz-border-radius-topleft: 0 !important;
+  -moz-border-radius-topright: 2px !important;
+  -moz-border-radius-bottomright: 2px !important;
+  -moz-border-radius-bottomleft: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 2px !important;
+  border-bottom-right-radius: 2px !important;
+  border-bottom-left-radius: 0 !important;
+  border-left: 0;
+}
+/*
+    Skin Flat
+    --------
+*/
+body.skin-flat {
+  background-color: #34495e;
+}
+/* skin-flat navbar */
+.skin-flat .navbar {
+  background-color: #1abc9c;
+}
+.skin-flat .navbar .nav a {
+  color: #2c3e50;
+}
+.skin-flat .navbar .nav > li > a:hover,
+.skin-flat .navbar .nav > li > a:active,
+.skin-flat .navbar .nav > li > a:focus,
+.skin-flat .navbar .nav .open > a,
+.skin-flat .navbar .nav .open > a:hover,
+.skin-flat .navbar .nav .open > a:focus {
+  background: #1abc9c;
+  color: #2c3e50;
+}
+.skin-flat .navbar .navbar-right > .nav {
+  margin-right: 10px;
+}
+.skin-flat .navbar .sidebar-toggle .icon-bar {
+  background: #2c3e50;
+}
+.skin-flat .navbar .sidebar-toggle:hover .icon-bar {
+  background: #2c3e50 !important;
+}
+/* skin-flat logo */
+.skin-flat .logo {
+  background-color: #16A085;
+  color: #f9f9f9;
+}
+.skin-flat .logo > a {
+  color: #f9f9f9;
+}
+.skin-flat .logo:hover {
+  background: #2C3E50;
+}
+/* skin-flat content header */
+.skin-flat .content {
+  background-color: #34495e !important;
+}
+.skin-flat .right-side > .content-header {
+  background: #34495e;
+  box-shadow: none;
+}
+.skin-flat .right-side > .content-header > h1 {
+  color: #FFF;
+}
+.skin-flat .right-side > .content-header > h1 > small {
+  color: #798795;
+}
+/* skin-flat breadcrumbs */
+.skin-flat .right-side > .content-header > .breadcrumb > li > a {
+  color: #798795;
+}
+.skin-flat .breadcrumb>.active {
+  color: #eee;
+}
+/* Skin-flat user panel */
+.skin-flat .user-panel > .image > img {
+  border: 1px solid #444;
+}
+.skin-flat .user-panel > .info,
+.skin-flat .user-panel > .info > a {
+  color: #eee;
+}
+/* skin-flat sidebar */
+.skin-flat .sidebar {
+  border-bottom: 1px solid #333;
+}
+.skin-flat .sidebar > .sidebar-menu > li {
+  border-top: 1px solid #333;
+  border-bottom: 0px solid #444;
+}
+.skin-flat .sidebar > .sidebar-menu > li:first-of-type {
+  border-top: 1px solid #444;
+}
+.skin-flat .sidebar > .sidebar-menu > li:first-of-type > a {
+  border-top: 0px solid #333;
+}
+.skin-flat .sidebar > .sidebar-menu > li > a {
+  margin-right: 1px;
+}
+.skin-flat .sidebar > .sidebar-menu > li > a:hover {
+  color: #fff;
+  background: #34495e;
+}
+.skin-flat .sidebar > .sidebar-menu > li.active > a {
+  color: #fff;
+  background: #E74C3C;
+}
+
+.skin-flat .sidebar > .sidebar-menu > li > .treeview-menu {
+  margin: 0 1px;
+  background: #444;
+}
+.skin-flat .left-side {
+  background: #2c3e50;
+}
+.skin-flat .sidebar a {
+  color: #eee;
+}
+.skin-flat .sidebar a:hover {
+  text-decoration: none;
+}
+.skin-flat .treeview-menu > li > a {
+  color: #ccc;
+}
+.skin-flat .treeview-menu > li.active > a,
+.skin-flat .treeview-menu > li > a:hover {
+  color: #fff;
+}
+.skin-flat .sidebar-form {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 0px solid #555;
+  margin: 10px 10px;
+}
+.skin-flat .sidebar-form input[type="text"],
+.skin-flat .sidebar-form .btn {
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 0 solid rgba(255, 255, 255, 0.1);
+  height: 35px;
+  outline: none;
+}
+.skin-flat .sidebar-form input[type="text"] {
+  color: #666;
+  -webkit-border-top-left-radius: 2px !important;
+  -webkit-border-top-right-radius: 0 !important;
+  -webkit-border-bottom-right-radius: 0 !important;
+  -webkit-border-bottom-left-radius: 2px !important;
+  -moz-border-radius-topleft: 2px !important;
+  -moz-border-radius-topright: 0 !important;
+  -moz-border-radius-bottomright: 0 !important;
+  -moz-border-radius-bottomleft: 2px !important;
+  border-top-left-radius: 2px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 2px !important;
+}
+.skin-flat .sidebar-form input[type="text"]:focus,
+.skin-flat .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+  background-color: #444;
+  border: 0;
+}
+.skin-flat .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+  border-left: 0;
+}
+.skin-flat .sidebar-form .btn {
   color: #999;
   -webkit-border-top-left-radius: 0 !important;
   -webkit-border-top-right-radius: 2px !important;

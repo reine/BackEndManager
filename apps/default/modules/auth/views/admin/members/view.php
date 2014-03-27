@@ -1,5 +1,3 @@
-<h2><?php print $header?></h2>
-
 <div class="buttons">                
 	<a href="<?php print  site_url('auth/admin/members/form')?>">
     <?php print  $this->bep_assets->icon('add');?>
