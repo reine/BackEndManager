@@ -37,11 +37,57 @@ Herewith listed are the features added in this release:
 
 ### System Requirements
 
-* Apache 2.x with mod_rewrite enabled
+* Apache 2.x with mod_rewrite and mod_vhost_alias enabled (current release tested on 2.2.26)
 * PHP 5.x (current release tested on 5.4.19)
-* CodeIgniter 2.x (current release tested on 2.1.4)
+* MySQL 5.x (current release tested on 5.0.10)
 
-More content to follow.
+### Installation Instructions
+
+Start by cloning the project from its git repository, as such:
+
+	git clone https://github.com/reine/BackEndManager.git
+
+Launch MySQL and use a database client (e.g., Sequel Pro or phpMyAdmin) to dump the SQL file located at **docs/db/default/001-bem_default.sql**
+
+Then create an Apache virtual host to with **bem.dev** as the **ServerName** and redirect it to the **assets/default** directory, as such:
+
+	<VirtualHost *:80>
+		ServerAdmin webmaster@localhost
+    	DocumentRoot "/Users/reine/Sites/BackEndManager/assets/default"
+    	ServerName bem.dev
+    	ServerAlias www.bem.dev
+    	ErrorLog "/private/var/log/apache2/bem.dev-error_log"
+    	CustomLog "/private/var/log/apache2/bem.dev-access_log" common
+	</VirtualHost>
+
+To make sure that the said server name is accessible via browser, edit your **/etc/hosts** file and add these at the bottom:
+
+	127.0.0.1	bem.dev
+	127.0.0.1	www.bem.dev
+
+*For Windows users: This file is located at C:/Windows/system32/drivers/etc/hosts*
+
+Restart Apache and point your browser to **http://bem.dev** or **http://www.bem.dev**
+
+It is good practice to use a dummy domain during the development stage rather than serving the site using localhost (i.e., via http://localhost/bem). Likewise, it is a good way to test how the site will eventually work once it is migrated to the production server.
+
+You should be able to see the frontend of the site with a login link in the upper right of the page.
+
+####Initial Login Info####
+
+Username: Administrator
+
+Email: hello@mydevstudio.com
+
+Password: admin123
+
+When you login, either use the username or the email to access the restricted content of the site.
+
+###Configuration###
+
+The configuration file was modified to allow both **secure** (https) and **unsecure** (http) access to the site pages. Likewise, it was modified to enable any domain (or subdomain) to serve its pages without manually altering the **base_url()** value. This feature avoids the hassle you will get when you want to host multiple domains (or subdomains) using one application only.
+
+*--- More content to follow ---*
 
 ## Screenshots
 

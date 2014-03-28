@@ -6,8 +6,8 @@
 # http://code.google.com/p/sequel-pro/
 #
 # Host: 127.0.0.1 (MySQL 5.6.14)
-# Database: bem_cms
-# Generation Time: 2014-03-25 01:16:02 +0000
+# Database: bem_default
+# Generation Time: 2014-03-28 03:29:14 +0000
 # ************************************************************
 
 
@@ -191,17 +191,17 @@ INSERT INTO `be_preferences` (`name`, `value`)
 VALUES
 	('default_user_group','1'),
 	('smtp_host',''),
-	('keep_error_logs_for','30'),
+	('keep_error_logs_for','15'),
 	('email_protocol','sendmail'),
-	('use_registration_captcha','0'),
+	('use_registration_captcha','1'),
 	('page_debug','0'),
-	('automated_from_name','BackendPro'),
+	('automated_from_name','BackEndManager at MyDevStudio Apps'),
 	('allow_user_registration','1'),
 	('use_login_captcha','0'),
-	('site_name','BackendPro'),
-	('automated_from_email','noreply@backendpro.co.uk'),
+	('site_name','BackEndManager'),
+	('automated_from_email','hello@mydevstudio.com'),
 	('account_activation_time','7'),
-	('allow_user_profiles','0'),
+	('allow_user_profiles','1'),
 	('activation_method','email'),
 	('autologin_period','30'),
 	('min_password_length','8'),
@@ -216,7 +216,7 @@ VALUES
 	('email_charset','utf-8'),
 	('bcc_batch_mode','0'),
 	('bcc_batch_size','200'),
-	('login_field','email');
+	('login_field','either');
 
 /*!40000 ALTER TABLE `be_preferences` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -306,7 +306,7 @@ LOCK TABLES `be_users` WRITE;
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`)
 VALUES
-	(1,'Administrator','15d771dd8adb31744b4ad91b9c7b5d92f1638311','hello@mydevstudio.com',1,2,NULL,NULL,'2014-03-25 09:10:52',NULL);
+	(1,'Administrator','15d771dd8adb31744b4ad91b9c7b5d92f1638311','hello@mydevstudio.com',1,2,NULL,'2014-03-28 03:40:23','2014-03-25 09:10:52',NULL);
 
 /*!40000 ALTER TABLE `be_users` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -332,7 +332,7 @@ LOCK TABLES `ci_sessions` WRITE;
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`)
 VALUES
-	('fa58f0e7d8ee4cff809c524ce8698bae','127.0.0.1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36',1395709900,'a:1:{s:9:\"user_data\";s:0:\"\";}');
+	('67205b3bab7b8627bd2975f19ef1adaa','127.0.0.1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36',1395974414,'a:11:{s:9:\"user_data\";s:0:\"\";s:2:\"id\";s:1:\"1\";s:8:\"username\";s:13:\"Administrator\";s:5:\"email\";s:21:\"hello@mydevstudio.com\";s:8:\"password\";s:40:\"15d771dd8adb31744b4ad91b9c7b5d92f1638311\";s:6:\"active\";s:1:\"1\";s:10:\"last_visit\";s:19:\"2014-03-27 07:16:38\";s:7:\"created\";s:19:\"2014-03-25 09:10:52\";s:8:\"modified\";N;s:5:\"group\";s:13:\"Administrator\";s:8:\"group_id\";s:1:\"2\";}');
 
 /*!40000 ALTER TABLE `ci_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
