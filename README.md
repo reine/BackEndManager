@@ -49,7 +49,7 @@ Start by cloning the project from its git repository, as such:
 
 Launch MySQL and use a database client (e.g., Sequel Pro or phpMyAdmin) to dump the SQL file located at **docs/db/default/001-bem_default.sql**
 
-Then create an Apache virtual host to with **bem.dev** as the **ServerName** and redirect it to the **assets/default** directory, as such:
+Then create an Apache virtual host with **bem.dev** as the **ServerName** and redirect it to the **assets/default** directory, as such:
 
 	<VirtualHost *:80>
 		ServerAdmin webmaster@localhost
@@ -60,7 +60,7 @@ Then create an Apache virtual host to with **bem.dev** as the **ServerName** and
     	CustomLog "/private/var/log/apache2/bem.dev-access_log" common
 	</VirtualHost>
 
-To make sure that the said server name is accessible via browser, edit your **/etc/hosts** file and add these at the bottom:
+To make sure that the said server name (and its alias) is accessible via browser, edit your **/etc/hosts** file and add these at the bottom:
 
 	127.0.0.1	bem.dev
 	127.0.0.1	www.bem.dev
