@@ -1,0 +1,9 @@
+@import url("../css/font-awesome.min.css");
+
+#wrapper {
+	padding: 20px 50px;
+}
+
+ul { list-style-type: none; margin: 0; }
+ul.results li.fail:before { content: "\f00d"; padding-left: 25px; color: red; }
+ul.results li.done:before { content: "\f00c"; padding-left: 25px; color: green; }
