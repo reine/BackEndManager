@@ -80,7 +80,7 @@ $autoload['helper'] = array('url','file');
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('default');
 
 
 /*
@@ -113,4 +113,4 @@ $autoload['model'] = array();
 
 
 /* End of file autoload.php */
-/* Location: ./application/config/autoload.php */
+/* Location: ./apps/default/config/autoload.php */
