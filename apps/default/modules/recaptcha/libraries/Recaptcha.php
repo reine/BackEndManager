@@ -13,6 +13,9 @@
 *   Mike Crawford
 *   Ben Maurer
 *
+* CONTRIBUTOR:
+*   Reina Sison-Gagno
+*
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
 * in the Software without restriction, including without limitation the rights
@@ -30,6 +33,13 @@
 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 * THE SOFTWARE.
+*
+*
+* UPDATE HISTORY:
+* 21.04.2014 - Updated API server links with new one from Google.
+*            - Fixed configuration file location error.
+*            - Fixed reCAPTCHA view file location error.
+* Updated by - Reina Sison-Gagno (https://github.com/reine)
 */
 
 /**
@@ -44,18 +54,19 @@
 class Recaptcha {
   
   //private
-  var $_rConfig;
-  var $_ci;
+  private $_rConfig;
+  private $_ci;
   
   //public
   var $is_valid;
   var $error;
   
   //set the default URLs for using Recaptcha
-  function __construct() {
+  function __construct()
+  {
     log_message('debug', 'Recaptcha class Initialized');
     $this->_ci =& get_instance();
-    $this->_ci->config->load('recaptcha');
+    $this->_ci->load->config('recaptcha/recaptcha');
     $this->_rConfig = $this->_ci->config->item('recaptcha');
     $this->is_valid = false;
     $this->error = '';
@@ -66,7 +77,8 @@ class Recaptcha {
    * @param $data - array of string elements to be encoded
    * @return string - encoded request
    */
-  function _recaptcha_qsencode($data) {
+  function _recaptcha_qsencode($data)
+  {
     return http_build_query($data);
   }
 
@@ -78,8 +90,8 @@ class Recaptcha {
    * @param int port
    * @return array response
    */
-  function _recaptcha_http_post($host, $path, $data, $port = 80) {
-    
+  function _recaptcha_http_post($host, $path, $data, $port = 80)
+  {  
     $req = $this->_recaptcha_qsencode($data);
     $http_request = implode('',array(
       "POST $path HTTP/1.0\r\n",
@@ -114,28 +126,30 @@ class Recaptcha {
   
    * @return string - The HTML to be embedded in the user's form.
    */
-  function recaptcha_get_html ($error = null, $use_ssl = false) {
-      if ($this->_rConfig['public'] == '') {
-      show_error("To use reCAPTCHA you must get an API key from <a href='http://recaptcha.net/api/getkey'>http://recaptcha.net/api/getkey</a>");
-      }
-      
-      if ($use_ssl) {
-        $server = $this->_rConfig['RECAPTCHA_API_SECURE_SERVER'];
-      } else {
-        $server = $this->_rConfig['RECAPTCHA_API_SERVER'];
-      }
+  function recaptcha_get_html ($error = null, $use_ssl = false)
+  {
+    if ($this->_rConfig['public'] == '') {
+    show_error("To use reCAPTCHA you must get an API key from <a href='https://www.google.com/recaptcha/admin/create'>https://www.google.com/recaptcha/admin/create</a>");
+    }
+    
+    if ($use_ssl) {
+      $server = $this->_rConfig['RECAPTCHA_API_SECURE_SERVER'];
+    } else {
+      $server = $this->_rConfig['RECAPTCHA_API_SERVER'];
+    }
 
     $errorpart = "";
     if ($error) {
        $errorpart = "&amp;error=" . $error;
     }
+
     $data = array(
       'server'=>$server,
       'key'=>$this->_rConfig['public'],
       'theme'=>$this->_rConfig['theme'],
       'errorpart'=>$errorpart
     );
-    return $this->_ci->load->view('recaptcha',$data,true);
+    return $this->_ci->load->view('recaptcha/recaptcha',$data,true);
   }
 
   /**
@@ -145,8 +159,9 @@ class Recaptcha {
    * @param string $domain The domain where the page is hosted
    * @param string $appname The name of your application
    */
-  function recaptcha_get_signup_url ($domain = null, $appname = null) {
-      return "http://recaptcha.net/api/getkey?".$this->_recaptcha_qsencode(array ('domain' => $domain, 'app' => $appname));
+  function recaptcha_get_signup_url ($domain = null, $appname = null)
+  {
+      return "https://www.google.com/recaptcha/admin/create?app=".$this->_recaptcha_qsencode(array ('domain' => $domain, 'app' => $appname));
   }
 
   /**
@@ -158,9 +173,10 @@ class Recaptcha {
     * @param array $extra_params an array of extra variables to post to the server
     * @return ReCaptchaResponse
     */
-  function recaptcha_check_answer ($remoteip, $challenge, $response, $extra_params = array()) {
+  function recaptcha_check_answer ($remoteip, $challenge, $response, $extra_params = array())
+  {
       if ($this->_rConfig['private'] == '') {
-          die ("To use reCAPTCHA you must get an API key from <a href='http://recaptcha.net/api/getkey'>http://recaptcha.net/api/getkey</a>");
+          die ("To use reCAPTCHA you must get an API key from <a href='https://www.google.com/recaptcha/admin/create'>https://www.google.com/recaptcha/admin/create</a>");
       }
   
       if ($remoteip == null || $remoteip == '') {
@@ -176,7 +192,7 @@ class Recaptcha {
 
     $response = $this->_recaptcha_http_post(
       $this->_rConfig['RECAPTCHA_VERIFY_SERVER'],
-      "/verify",
+      "/recaptcha/api/verify",
       array (
         'privatekey' => $this->_rConfig['private'],
         'remoteip' => $remoteip,

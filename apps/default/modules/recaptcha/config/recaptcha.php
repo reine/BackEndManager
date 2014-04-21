@@ -14,11 +14,11 @@
 // ---------------------------------------------------------------------------
 
 $config['recaptcha'] = array(
-	'public'=>'',
-    'private'=>'',
-    'RECAPTCHA_API_SERVER' =>'http://api.recaptcha.net',
-    'RECAPTCHA_API_SECURE_SERVER'=>'https://api-secure.recaptcha.net',
-    'RECAPTCHA_VERIFY_SERVER' =>'api-verify.recaptcha.net',
+	'public'=>'6LcWJfISAAAAAGrx0xYGyhFFcX51dSwLF8s5RNBX',
+    'private'=>'6LcWJfISAAAAAMWKsGs9qLUIzxxFUajVXHPSH44Z',
+    'RECAPTCHA_API_SERVER' =>'http://www.google.com/recaptcha/api',
+    'RECAPTCHA_API_SECURE_SERVER'=>'https://www.google.com/recaptcha/api',
+    'RECAPTCHA_VERIFY_SERVER' =>'www.google.com',
     'theme' => 'white'
 ); 
 
