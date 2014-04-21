@@ -14,8 +14,8 @@
 // ---------------------------------------------------------------------------
 
 $config['recaptcha'] = array(
-	'public'=>'6LcWJfISAAAAAGrx0xYGyhFFcX51dSwLF8s5RNBX',
-    'private'=>'6LcWJfISAAAAAMWKsGs9qLUIzxxFUajVXHPSH44Z',
+	'public'=>'',
+    'private'=>'',
     'RECAPTCHA_API_SERVER' =>'http://www.google.com/recaptcha/api',
     'RECAPTCHA_API_SECURE_SERVER'=>'https://www.google.com/recaptcha/api',
     'RECAPTCHA_VERIFY_SERVER' =>'www.google.com',
