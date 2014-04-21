@@ -2741,7 +2741,7 @@ Component: timeline
     --------
 */
 body.skin-flat {
-  background-color: #34495e;
+  background-color: #16a085;
 }
 /* skin-flat navbar */
 .skin-flat .navbar {
@@ -2781,7 +2781,7 @@ body.skin-flat {
 }
 /* skin-flat content header */
 .skin-flat .content {
-  background-color: #34495e !important;
+  background-color: #16a085 !important;
 }
 .skin-flat .right-side > .content-header {
   background: #34495e;
