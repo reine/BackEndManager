@@ -199,19 +199,14 @@ class Auth_form_processing
 				redirect($page,'location');
 			}
 
-
 			// If user has access to control panel
                         
 			if ( check('Control Panel',NULL,FALSE))
 			{
 				redirect($this->CI->config->item('uselib_action_admin_login'),'location');
 			}
-                        redirect($this->CI->config->item('userlib_action_login'),'location');
-                         
-                        
-                        
-		}
-               
+                redirect($this->CI->config->item('userlib_action_login'),'location');          
+		}      
 		else
 		{
 			// Login details not valid
@@ -220,114 +215,111 @@ class Auth_form_processing
  
 		redirect('auth/login','location');
 	}
-        
 
-        function login()
-        {
-            //Set Validation Rules
-            switch($this->CI->preference->item('login_field'))
+    function login()
+    {
+        //Set Validation Rules
+        switch($this->CI->preference->item('login_field'))
 		{
 			case 'email':
-                            $this->CI->form_validation->set_rules('login_field', 
-                                    $this->CI->lang->line('userlib_email'), 
-                                    'trim|required|valid_email');
-				break;
+                $this->CI->form_validation->set_rules('login_field', 
+                        $this->CI->lang->line('userlib_email'), 
+                        'trim|required|valid_email');
+			break;
+
 			case 'username':
-                             $this->CI->form_validation->set_rules('login_field',
-                                    $this->CI->lang->line('userlib_username'),
-                                    'trim|required');
-				break;
+                $this->CI->form_validation->set_rules('login_field',
+                        $this->CI->lang->line('userlib_username'),
+                        'trim|required');
+			break;
+
 			default:
-                            $this->CI->form_validation->set_rules('login_field',
-                                    $this->CI->lang->line('userlib_email_username'),
-                                    'trim|required');
-				break;
+                $this->CI->form_validation->set_rules('login_field',
+                        $this->CI->lang->line('userlib_email_username'),
+                        'trim|required');
+			break;
 		}
-            // Only run captcha check if needed
-            if($this->CI->preference->item('use_login_captcha'))
-            {
-      
-                 $this->CI->form_validation->set_rules('recaptcha_response_field', 
-                                    'recaptcha_response_field', 
-                                    'trim|required|valid_captcha'
-                         );
 
-            }
+        // Only run captcha check if needed
+        if($this->CI->preference->item('use_login_captcha'))
+        {
+            $this->CI->form_validation->set_rules('recaptcha_response_field', 
+                        'recaptcha_response_field', 
+                        'trim|required|valid_captcha'
+            );
 
-            $this->CI->form_validation->set_rules('password',
-                                    'password',
-                                    'trim|required');
-		
-           
+        }
+
+        $this->CI->form_validation->set_rules('password',
+                    'password',
+                    'trim|required');
             
-            if ( $this->CI->form_validation->run())
-            { 
-		// Fetch what they entered in the login
-		$values['login_field'] = $this->CI->input->post('login_field');
-		$values['password'] = $this->CI->userlib->encode_password($this->CI->input->post('password'));
-		// See if a user exists with the given credentials
-		$result = $this->CI->user_model->validateLogin($values['login_field'],$values['password']);
+        if ( $this->CI->form_validation->run())
+        { 
+			// Fetch what they entered in the login
+			$values['login_field'] = $this->CI->input->post('login_field');
+			$values['password'] = $this->CI->userlib->encode_password($this->CI->input->post('password'));
+			
+			// See if a user exists with the given credentials
+			$result = $this->CI->user_model->validateLogin($values['login_field'],$values['password']);
                 
-		if ( $result['valid'] )
-		{
-			// We we have a valid user
-			$user = $result['query']->row();
-
-			// Check if the users account hasn't been activated yet
-			if ( $user->active == 0 )
+			if ( $result['valid'] )
 			{
-				// NEEDS ACTIVATION
-				flashMsg('warning',$this->CI->lang->line('userlib_account_unactivated'));
-				redirect('auth/login','location');
+				// We we have a valid user
+				$user = $result['query']->row();
+
+				// Check if the users account hasn't been activated yet
+				if ( $user->active == 0 )
+				{
+					// NEEDS ACTIVATION
+					flashMsg('warning',$this->CI->lang->line('userlib_account_unactivated'));
+					redirect('auth/login','location');
+				}
+
+				// Everything is OK
+				// Save details to session
+				//@TODO: This dosn't seem very safe having the login code totaly exposed
+				$this->CI->userlib->set_userlogin($user->id);
+				//$this->_set_userlogin($user->id);
+
+				// If they asked to remember login, store details
+				if ( $this->CI->input->post('remember') )
+				{
+					set_cookie('autologin',
+					serialize(array('id'=>$user->id, 'login_field'=>$values['login_field'], 'password'=>$values['password'])),
+					$this->CI->preference->item('autologin_period')*86400);
+				}
+
+				flashMsg('success',$this->CI->lang->line('userlib_login_successfull'));
+
+				// Redirect to requested page
+				if(FALSE !== ($page = $this->CI->session->flashdata('requested_page')))
+				{
+					redirect($page,'location');
+				}
+
+				// If user has access to control panel
+				if ( check('Control Panel',NULL,FALSE))
+				{
+					redirect($this->CI->config->item('userlib_action_admin_login'),'location');
+				}
+
+				redirect($this->CI->config->item('userlib_action_login'),'location');
+			}
+			else
+			{
+				// Login details not valid
+				flashMsg('error',$this->CI->lang->line('userlib_login_failed'));
 			}
 
-			// Everything is OK
-			// Save details to session
-			//@TODO: This dosn't seem very safe having the login code totaly exposed
-			$this->CI->userlib->set_userlogin($user->id);
-			//$this->_set_userlogin($user->id);
-
-			// If they asked to remember login, store details
-			if ( $this->CI->input->post('remember') )
-			{
-				set_cookie('autologin',
-				serialize(array('id'=>$user->id, 'login_field'=>$values['login_field'], 'password'=>$values['password'])),
-				$this->CI->preference->item('autologin_period')*86400);
-			}
-
-			flashMsg('success',$this->CI->lang->line('userlib_login_successfull'));
-
-			// Redirect to requested page
-			if(FALSE !== ($page = $this->CI->session->flashdata('requested_page')))
-			{
-				redirect($page,'location');
-			}
-
-			// If user has access to control panel
-			if ( check('Control Panel',NULL,FALSE))
-			{
-				redirect($this->CI->config->item('userlib_action_admin_login'),'location');
-			}
-
-			redirect($this->CI->config->item('userlib_action_login'),'location');
+			redirect('auth/login','location');
 		}
-		else
-		{
-			// Login details not valid
-			flashMsg('error',$this->CI->lang->line('userlib_login_failed'));
-		}
-
-		redirect('auth/login','location');
-	}
         else
         {
-
             //$this->login_form('public');
             redirect('auth/login','location');
         }
-
- }
-
+    }
 
 	/**
 	 * Logout User
@@ -383,7 +375,6 @@ class Auth_form_processing
 			$data['page'] = $this->CI->config->item('backendpro_template_public') . 'form_forgotten_password';
 			$data['module'] = 'auth';
 			$this->CI->load->view($container,$data);
-
 			$this->CI->session->keep_flashdata('requested_page');
 		}
 		else
@@ -426,7 +417,6 @@ class Auth_form_processing
 
 			// Update password in database
 			$this->CI->user_model->update('Users',array('password'=>$encoded_password),array('email'=>$email));
-
 			flashMsg('success',$this->CI->lang->line('userlib_new_password_sent'));
 		}
 		else

@@ -61,6 +61,8 @@ $lang['userlib_email_register'] = 'Your new Account has been created';
 $lang['userlib_validation_captcha'] = 'The %s is incorrect.';
 $lang['userlib_validation_username'] = 'The %s is aleady in use.';
 $lang['userlib_validation_email'] = 'The %s is already in use.';
+$lang['userlib_email_used'] = 'The email provided is already in use.';
+$lang['userlib_username_used'] = 'The username provided is already in use.';
 
 /* Status messages */
 $lang['userlib_status_restricted_access'] = "You do not have permission to view the page you requested.";
