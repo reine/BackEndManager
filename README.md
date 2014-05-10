@@ -33,6 +33,13 @@ Herewith listed are the features added in this release:
 * [Beautiful Flat Icons by ElegantThemes](http://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free) are used in the dashboard apps of the admin panel.
 * *Other features to be added as needed*
 
+Features fixed from the BEP Price/Weli releases:
+
+* ReCAPTCHA - Used new Google API codes. Updated config settings to make this feature work in the current release.
+* Core Controllers Renamed - Capitalized the "c" in the main controllers' names to fix the problem on extended controller class not found.
+* Auth Helper - A copy of the ACL helper was placed inside the main app's helper directory to fix the problem of functions not found.
+
+
 ## Setup, Installation & Configuration
 
 ### System Requirements
@@ -75,11 +82,9 @@ You should be able to see the frontend of the site with a login link in the uppe
 
 ####Initial Login Info####
 
-Username: Administrator
-
-Email: hello@mydevstudio.com
-
-Password: admin123
+	Username: Administrator
+	Email: hello@mydevstudio.com
+	Password: admin123
 
 When you login, either use the username or the email to access the restricted content of the site.
 
