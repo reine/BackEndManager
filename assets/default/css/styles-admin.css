@@ -175,6 +175,7 @@ h2 { margin-top: 0.5em; border-bottom: 1px solid #777; }
 
 /* Status / Alerts */
 .alert>ul { list-style: none !important; }
+.alert { padding-left: 15px; margin-left: 0; }
 
 /* Tabular Boxes */
 .box-table-header { margin-bottom: 15px; }

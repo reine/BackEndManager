@@ -49,6 +49,9 @@
  */
 $config['asset'] = array();
 
+// App's Custom JS
+$config['asset'][] = array('file'=>'app.js', 'name'=>'app-js');
+
 // BackendPro CSS
 $config['asset'][] = array('file'=>'styles-front.css');
 $config['asset'][] = array('file'=>'styles-admin.css');
@@ -101,7 +104,7 @@ $config['asset'][] = array('file'=>'ionicons.min.css', 'name'=>'ionicons-css');
  * 
  * Where <asset_n> is the name of the asset file specified in the array above.
  */
-$config['asset_group']['SITE'] = 'bootstrap-css|bootstrap-js';
+$config['asset_group']['SITE'] = 'bootstrap-css|bootstrap-js|app-js';
 $config['asset_group']['PUBLIC'] = 'bootstrap-template-modern-business-css|fontawesome-css|bootstrap-theme-flatly|styles-front|bootstrap-template-modern-business-js';
 $config['asset_group']['ADMIN'] = 'fontawesome-css|ionicons-css|adminlte-css|styles-admin|treeview|bep_select_all|adminlte-js';
 
