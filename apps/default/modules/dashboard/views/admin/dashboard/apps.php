@@ -25,7 +25,8 @@
     </a>
 
     <a class="btn btn-app" href="<?php print site_url('dropbox/admin/dashboard'); ?>">
-        <i class="fa fa-dropbox"></i> <?php print $this->lang->line('dashboard_apps_dropbox'); ?>
+        <?php print $this->bep_assets->icon('dropbox'); ?><br />
+        <?php print $this->lang->line('dashboard_apps_dropbox'); ?>
     </a>
 
     <a class="btn btn-app" href="<?php print site_url('elearn/admin/dashboard'); ?>">
