@@ -1,3 +1,4 @@
 .DS_Store
 apps/default/logs/*
 assets/default/_install/install.log
+apps/default/modules/cms/*
