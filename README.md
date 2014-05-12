@@ -29,7 +29,7 @@ Herewith listed are the features added in this release:
 * Bootstrap 3 Framework
 * Option to use Bootstrap Themes in the frontend - e.g., Flatly from [Bootswatch](http://bootswatch.com/)
 * Option to use Bootstrap Templates in the frontend - e.g., Modern Business from [Start Bootstrap](http://startbootstrap.com/)
-* [AdminLTE](http://almsaeedstudio.com) as the new admin panel's design & layout; includes two skins - i.e., Black, Blue. A new skin (entitled "Flat") have been added specifically for use in BackEndManager.
+* [AdminLTE](http://almsaeedstudio.com) as the admin panel template; a new skin (entitled "Flat") have been added specifically for use in BackEndManager.
 * [Beautiful Flat Icons by ElegantThemes](http://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free) are used in the dashboard apps of the admin panel.
 * *Other features to be added as needed*
 
@@ -94,13 +94,17 @@ The configuration file was modified to allow both **secure** (https) and **unsec
 
 *--- More content to follow ---*
 
+## Modules
+
+Herewith listed are the modules for BackEndManager:
+
+* [Content Management](https://github.com/reine/bem-cms)
+* *Other modules to be added as needed*
+
 ## Screenshots
 
 *Login screen using Flatly as theme with Modern Business as template.*
 ![screenshot - login](/docs/screens/screenshot-login.png?raw=true)
-
-*Dashboard screen using the Black skin in the admin panel.*
-![screenshot - dashboard](/docs/screens/screenshot-dashboard.png?raw=true)
 
 *Dashboard screen with the default Flat skin in the admin panel.*
 ![screenshot - dashboard - flat](/docs/screens/screenshot-dashboard-flat.png?raw=true)
