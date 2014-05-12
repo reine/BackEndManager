@@ -176,6 +176,14 @@ h2 { margin-top: 0.5em; border-bottom: 1px solid #777; }
 /* Status / Alerts */
 .alert>ul { list-style: none !important; }
 
+/* Tabular Boxes */
+.box-table-header { margin-bottom: 15px; }
+.box-actions { float: left; }
+.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th { background: #C8F7C5; }
+.box-actions a, .bg-box-action { background-color: #34495e; color: #FFF; }
+.box-actions a:hover, .bg-box-action:hover { background-color: #C0392B; color: #FFF; }
+th.middle { margin: 0 auto; text-align: center; }
+
 /* PREFERENCE LIST */
 #preference_list { font-size: 1.1em; list-style-type: none; }
 
