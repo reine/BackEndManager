@@ -1,0 +1,3 @@
+[submodule "apps/default/modules/cms"]
+	path = apps/default/modules/cms
+	url = https://github.com/reine/bem-cms.git
