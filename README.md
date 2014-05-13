@@ -38,6 +38,7 @@ Features fixed from the BEP Price/Weli releases:
 * ReCAPTCHA - Used new Google API codes. Updated config settings to make this feature work in the current release.
 * Core Controllers Renamed - Capitalized the "c" in the main controllers' names to fix the problem on extended controller class not found.
 * Auth Helper - A copy of the ACL helper was placed inside the main app's helper directory to fix the problem of functions not found.
+* Added missing *cache* subdirectory inside the app's assets directory.
 
 
 ## Setup, Installation & Configuration
@@ -53,6 +54,8 @@ Features fixed from the BEP Price/Weli releases:
 Start by cloning the project from its git repository, as such:
 
 	git clone https://github.com/reine/BackEndManager.git
+
+If you do not want to use git, you can [download a copy](https://github.com/reine/BackEndManager/archive/master.zip) of the latest release in ZIP format.
 
 Launch MySQL and use a database client (e.g., Sequel Pro or phpMyAdmin) to dump the SQL file located at **docs/db/default/001-bem_default.sql**
 
@@ -144,7 +147,7 @@ Herewith listed are the modules for BackEndManager:
 
 This is a work in progress - use at your own risk.
 
-If you found any bugs, please report them at the [Issues](https://github.com/reine/BackEndManager/issues) section of the project repository. Do note that I may not always reply to them as needed because I also work on my client projects.
+If you find any bugs, please report them at the [Issues](https://github.com/reine/BackEndManager/issues) section of the project repository. Do note that I may not always reply to them as needed because I also work on my client projects.
 
 ## Copyright & License
 
