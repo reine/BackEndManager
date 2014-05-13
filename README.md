@@ -94,6 +94,32 @@ The configuration file was modified to allow both **secure** (https) and **unsec
 
 *--- More content to follow ---*
 
+### Set Up A New App
+
+To set up a new app (the system can handle as many apps as possible using only one core), here are the steps to accomplish them:
+
+* Create a new app directory inside **apps**. (e.g. apps/extranet)
+* Copy all files inside **apps/default** to the new app directory.
+* Create a new assets directory inside **assets**. Make sure it has the same name as your new app directory. (e.g. assets/extranet)
+* Copy all files inside **assets/default** to the new assets directory. Rename the **_install** directory to **install**.
+* Create a new virtual host entry and redirect it to your new app's assets directory. Check out the sample below:
+
+		<VirtualHost *:80>
+			ServerAdmin webmaster@localhost
+			DocumentRoot "/Users/reine/Sites/BackEndManager/assets/extranet"
+			ServerName extranet.dev
+			ServerAlias www.extranet.dev
+		</VirtualHost>
+
+* Likewise, create an entry in your **/etc/hosts** file to be able to use the app's development domain.
+
+		127.0.0.1	extranet.dev
+		127.0.0.1	www.extranet.dev
+
+* Restart Apache and point your browser to your new app's install directory - **http://extranet.dev/install/**
+* During the installation, change all references of **app-new** to **extranet** (the latter as the new name for your app). Provide the necessary database access information and create the admin account. Leave the encryption key field blank as the system will automatically generate this for new installations.
+* If you encounter any installation errors (e.g., file or directory permissions), please fix them and start the install process again.
+
 ## Modules
 
 Herewith listed are the modules for BackEndManager:
@@ -103,10 +129,13 @@ Herewith listed are the modules for BackEndManager:
 
 ## Screenshots
 
-*Login screen using Flatly as theme with Modern Business as template.*
+*Successful install screen (for new app setup)*
+![screenshot - successful install](/docs/screens/screenshot-successful-install.png?raw=true)
+
+*Login screen using Flatly as theme with Modern Business as template*
 ![screenshot - login](/docs/screens/screenshot-login.png?raw=true)
 
-*Dashboard screen with the default Flat skin in the admin panel.*
+*Dashboard screen with the default Flat skin in the admin panel*
 ![screenshot - dashboard - flat](/docs/screens/screenshot-dashboard-flat.png?raw=true)
 
 ![screenshot - settings](/docs/screens/screenshot-settings.png?raw=true)
