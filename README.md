@@ -31,6 +31,7 @@ Herewith listed are the features added in this release:
 * Option to use Bootstrap Templates in the frontend - e.g., Modern Business from [Start Bootstrap](http://startbootstrap.com/)
 * [AdminLTE](http://almsaeedstudio.com) as the admin panel template; a new skin (entitled "Flat") have been added specifically for use in BackEndManager.
 * [Beautiful Flat Icons by ElegantThemes](http://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free) are used in the dashboard apps of the admin panel.
+* API-ready with REST server implementation.
 * *Other features to be added as needed*
 
 Features fixed from the BEP Price/Weli releases:
@@ -94,6 +95,10 @@ When you login, either use the username or the email to access the restricted co
 ###Configuration###
 
 The configuration file was modified to allow both **secure** (https) and **unsecure** (http) access to the site pages. Likewise, it was modified to enable any domain (or subdomain) to serve its pages without manually altering the **base_url()** value. This feature avoids the hassle you will get when you want to host multiple domains (or subdomains) using one application only.
+
+####API-Ready with REST Implementation####
+
+The REST library is not autoloaded by default. It will only be executed if specifically called by the modules.
 
 *--- More content to follow ---*
 
