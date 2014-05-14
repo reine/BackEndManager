@@ -123,8 +123,7 @@ body > .header .logo {
 #dashboard div.widget {
 	position: relative;
 	display: block;
-	border: 1px #CCC solid;	
-	margin-bottom: 16px;
+	border: 1px #CCC solid;
 	background: #FFF;
 }
 
@@ -140,6 +139,7 @@ body > .header .logo {
 #dashboard div.widget div.body {
 	display: block;
 	margin: 5px;
+	color: #666;
 }
 
 #dashboard div.widget div.action {
@@ -184,6 +184,7 @@ h2 { margin-top: 0.5em; border-bottom: 1px solid #777; }
 .box-actions a, .bg-box-action { background-color: #34495e; color: #FFF; }
 .box-actions a:hover, .bg-box-action:hover { background-color: #C0392B; color: #FFF; }
 th.middle { margin: 0 auto; text-align: center; }
+.box-body { color: #666; }
 
 /* PREFERENCE LIST */
 #preference_list { font-size: 1.1em; list-style-type: none; }

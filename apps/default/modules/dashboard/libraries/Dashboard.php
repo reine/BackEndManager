@@ -74,7 +74,7 @@ class Dashboard
 		// Loop over each section
 		foreach(array('top','left','right') as $section)
 		{
-			$output.= '<div id="'.$section.'section" class="sortable">';
+			$output.= '<div id="'.$section.'section" class="sortable box box-primary">';
 
 			// Add that sections widgets
 			if( isset($this->widgets[$section]))

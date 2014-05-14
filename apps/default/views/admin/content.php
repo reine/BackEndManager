@@ -17,7 +17,24 @@
             <section class="content">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="box box-solid">
+                        <?php
+                            // Add background color to all pages except those related to system management
+                            if  (
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'members')) ||
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'access_control')) ||
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'acl_permissions')) ||
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'acl_groups')) ||
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'acl_resources')) ||
+                                    (($this->uri->segment(1) == 'auth') && ($this->uri->segment(3) == 'acl_actions')) ||
+                                    (($this->uri->segment(1) == 'admin') && ($this->uri->segment(2) == 'settings'))
+                                )
+                            {
+                                $moduleBackground = '';
+                            } else {
+                                $moduleBackground = 'bg-clouds';
+                            }
+                        ?>
+                        <div class="box box-solid <?php print $moduleBackground; ?>">
                             <div class="box-body">
                                 <!-- start content -->
 
