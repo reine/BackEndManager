@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.14)
 # Database: bem_default
-# Generation Time: 2014-03-28 03:29:14 +0000
+# Generation Time: 2014-05-14 09:34:30 +0000
 # ************************************************************
 
 
@@ -142,7 +142,8 @@ VALUES
 	(8,11,12,'Permissions',NULL),
 	(9,9,10,'Groups',NULL),
 	(10,7,8,'Resources',NULL),
-	(11,5,6,'Actions',NULL);
+	(11,5,6,'Actions',NULL),
+	(12,3,4,'Modules',NULL);
 
 /*!40000 ALTER TABLE `be_acl_resources` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -306,7 +307,7 @@ LOCK TABLES `be_users` WRITE;
 
 INSERT INTO `be_users` (`id`, `username`, `password`, `email`, `active`, `group`, `activation_key`, `last_visit`, `created`, `modified`)
 VALUES
-	(1,'Administrator','15d771dd8adb31744b4ad91b9c7b5d92f1638311','hello@mydevstudio.com',1,2,NULL,'2014-03-28 03:40:23','2014-03-25 09:10:52',NULL);
+	(1,'Administrator','15d771dd8adb31744b4ad91b9c7b5d92f1638311','hello@mydevstudio.com',1,2,NULL,'2014-05-14 10:54:19','2014-03-25 09:10:52',NULL);
 
 /*!40000 ALTER TABLE `be_users` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -332,7 +333,7 @@ LOCK TABLES `ci_sessions` WRITE;
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`)
 VALUES
-	('67205b3bab7b8627bd2975f19ef1adaa','127.0.0.1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36',1395974414,'a:11:{s:9:\"user_data\";s:0:\"\";s:2:\"id\";s:1:\"1\";s:8:\"username\";s:13:\"Administrator\";s:5:\"email\";s:21:\"hello@mydevstudio.com\";s:8:\"password\";s:40:\"15d771dd8adb31744b4ad91b9c7b5d92f1638311\";s:6:\"active\";s:1:\"1\";s:10:\"last_visit\";s:19:\"2014-03-27 07:16:38\";s:7:\"created\";s:19:\"2014-03-25 09:10:52\";s:8:\"modified\";N;s:5:\"group\";s:13:\"Administrator\";s:8:\"group_id\";s:1:\"2\";}');
+	('e5a725150eeab355be5ce0a150d5ac13','127.0.0.1','Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/537.36',1400057654,'a:11:{s:9:\"user_data\";s:0:\"\";s:2:\"id\";s:1:\"1\";s:8:\"username\";s:13:\"Administrator\";s:5:\"email\";s:21:\"hello@mydevstudio.com\";s:8:\"password\";s:40:\"15d771dd8adb31744b4ad91b9c7b5d92f1638311\";s:6:\"active\";s:1:\"1\";s:10:\"last_visit\";s:19:\"2014-05-13 17:26:46\";s:7:\"created\";s:19:\"2014-03-25 09:10:52\";s:8:\"modified\";N;s:5:\"group\";s:13:\"Administrator\";s:8:\"group_id\";s:1:\"2\";}');
 
 /*!40000 ALTER TABLE `ci_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
