@@ -45,4 +45,42 @@ When creating a new menu item on the top-most level, please ensure that you assi
                         </ul>
                     </li>
                     <?php endif;?>
+
+                    <?php
+                        if(check('Modules',NULL,FALSE)):
+                            if  (
+                                    ($this->uri->segment(1) == 'messages') ||
+                                    ($this->uri->segment(1) == 'tasks') ||
+                                    ($this->uri->segment(1) == 'calendar') ||
+                                    ($this->uri->segment(1) == 'contacts') ||
+                                    ($this->uri->segment(1) == 'cms') ||
+                                    ($this->uri->segment(1) == 'dropbox') ||
+                                    ($this->uri->segment(1) == 'elearn') ||
+                                    ($this->uri->segment(1) == 'videos') ||
+                                    ($this->uri->segment(1) == 'games')
+                                ) {
+                                $moduleActiveLink = 'active';
+                            } else {
+                                $moduleActiveLink = '';
+                            }
+                    ?>
+                    <li class="treeview <?php print $moduleActiveLink; ?>" id="menu_bep_modules">
+                        <a href="#">
+                            <i class="fa fa-puzzle-piece"></i>
+                            <span><?php print $this->lang->line('backendpro_modules')?></span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <?php if(check('Messages',NULL,FALSE)):?><li><?php print anchor('messages/admin/dashboard', '<i class="fa fa-angle-double-right"></i> '.$this->lang->line('backendpro_messages'))?></li><?php endif;?>
+                            <?php if(check('Tasks',NULL,FALSE)):?><li><?php print anchor('tasks/admin/access_control', '<i class="fa fa-angle-double-right"></i>'.$this->lang->line('backendpro_tasks'))?></li><?php endif;?>
+                            <?php if(check('Calendar',NULL,FALSE)):?><li><?php print anchor('calendar/admin/dashboard', '<i class="fa fa-angle-double-right"></i>'.$this->lang->line('backendpro_calendar'))?></li><?php endif;?>
+                            <?php if(check('Contacts',NULL,FALSE)):?><li><?php print anchor('contacts/admin/dashboard', '<i class="fa fa-angle-double-right"></i>'.$this->lang->line('backendpro_contacts'))?></li><?php endif;?>
+                            <?php if(check('Content Management',NULL,FALSE)):?><li><?php print anchor('cms/admin/dashboard', '<i class="fa fa-angle-double-right"></i>'.$this->lang->line('backendpro_cms'))?></li><?php endif;?>
+                            <?php if(check('Dropbox',NULL,FALSE)):?><li><?php print anchor('dropbox/admin/dashboard', '<i class="fa fa-angle-double-right"></i>'.$this->lang->line('backendpro_dropbox'))?></li><?php endif;?>
+                            <?php if(check('eLearn',NULL,FALSE)):?><li><?php print anchor('elearn/admin/dashboard', '<i class="fa fa-angle-double-right"></i>'.$this->lang->line('backendpro_elearn'))?></li><?php endif;?>
+                            <?php if(check('Videos',NULL,FALSE)):?><li><?php print anchor('videos/admin/dashboard', '<i class="fa fa-angle-double-right"></i>'.$this->lang->line('backendpro_videos'))?></li><?php endif;?>
+                            <?php if(check('Games',NULL,FALSE)):?><li><?php print anchor('games/admin/dashboard', '<i class="fa fa-angle-double-right"></i>'.$this->lang->line('backendpro_games'))?></li><?php endif;?>
+                        </ul>
+                    </li>
+                    <?php endif;?>
                 </ul>

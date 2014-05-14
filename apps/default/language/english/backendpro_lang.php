@@ -46,12 +46,22 @@ $lang['backendpro_remove_install'] = "Please remove the install directory from y
 $lang['backendpro_action_failed'] = "The action '%s' has failed, please try again";
 
 /* All Main Controller Names and menu items */
-$lang['backendpro_dashboard'] = "Dashboard";
-$lang['backendpro_system'] = 'System';
-$lang['backendpro_members'] = 'Members';
-$lang['backendpro_access_control'] = 'Access Control';
-$lang['backendpro_settings'] = 'Settings';
-$lang['backendpro_utilities'] = 'Utilities';
+$lang['backendpro_dashboard'] 	= "Dashboard";
+$lang['backendpro_system'] 		= 'System';
+	$lang['backendpro_members'] 		= 'Members';
+	$lang['backendpro_access_control']	= 'Access Control';
+	$lang['backendpro_settings'] 		= 'Settings';
+	$lang['backendpro_utilities'] 		= 'Utilities';
+$lang['backendpro_modules'] 	= 'Modules';
+	$lang['backendpro_messages'] 		= 'Messages';
+	$lang['backendpro_tasks'] 			= 'Tasks';
+	$lang['backendpro_calendar'] 		= 'Calendar';
+	$lang['backendpro_contacts'] 		= 'Contacts';
+	$lang['backendpro_cms'] 			= 'Content';
+	$lang['backendpro_dropbox'] 		= 'Dropbox';
+	$lang['backendpro_elearn'] 			= 'eLearn';
+	$lang['backendpro_videos'] 			= 'Videos';
+	$lang['backendpro_games'] 			= 'Games';
 
 /* Setup Preference Groups */
 $lang['preference_page_general_configuration'] = "General Configuration";
