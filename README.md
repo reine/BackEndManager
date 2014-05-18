@@ -26,7 +26,8 @@ Herewith is a list of features from the original release:
 Herewith listed are the features added in this release:
 
 * Touted as a **"multiple application - one core"** so that it will be easy to upgrade the system files without affecting the application files. Likewise, each app can stand alone with its own set of modules.
-* Bootstrap 3 Framework
+* [Bootstrap v3.1.1](http://getbootstrap.com)
+* [Font Awesome v4.1.0](http://fortawesome.github.io/Font-Awesome/)
 * Option to use Bootstrap Themes in the frontend - e.g., Flatly from [Bootswatch](http://bootswatch.com/)
 * Option to use Bootstrap Templates in the frontend - e.g., Modern Business from [Start Bootstrap](http://startbootstrap.com/)
 * [AdminLTE](http://almsaeedstudio.com) as the admin panel template; a new skin (entitled "Flat") have been added specifically for use in BackEndManager.
